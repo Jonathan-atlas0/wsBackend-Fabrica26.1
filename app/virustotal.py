@@ -1,4 +1,5 @@
 import requests
+import time
 from django.conf import settings
 
 class VirusTotalService:
@@ -17,9 +18,18 @@ class VirusTotalService:
         return self.get_report(analysis_id)
 
     def get_report(self, analysis_id):
-        response = requests.get(
-            f"{self.base_url}/analyses/{analysis_id}",
-            headers=self.headers
-        )
-        response.raise_for_status()
-        return response.json()
+        for _ in range(10):  # tenta até 10 vezes
+            response = requests.get(
+                f"{self.base_url}/analyses/{analysis_id}",
+                headers=self.headers
+            )
+            response.raise_for_status()
+            result = response.json()
+
+            status = result["data"]["attributes"]["status"]
+            if status == "completed":
+                return result
+            
+            time.sleep(5)
+
+        return result 

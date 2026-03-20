@@ -44,7 +44,9 @@
         </div>
     </form>
     <div class="result" id="link-result">
-        {% if result %}
+        {% if erro %}
+        <span class="empty">Erro{{ erro }}</span>
+        {% elif result %}
             <p>Status: {{ result.data.attributes.status }}</p>
             <p>Malicioso: {{ result.data.attributes.stats.malicious }}</p>
             <p>Inofensivo: {{ result.data.attributes.stats.harmless }}</p>
