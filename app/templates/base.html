@@ -74,9 +74,20 @@
                 </thead>
                 <tbody id="log-body">
                     <tr>
-                        <td colspan="4" class="empty">Nenhuma verificação realizada ainda.</td>
-                    </tr>
-                </tbody>
+                        <tbody id="log-body">
+                            {% for item in historico %}
+                            <tr>
+                                <td>{{ item.tipo }}</td>
+                                <td>{{ item.consulta }}</td>
+                                <td>{{ item.resultado }}</td>
+                                <td>{{ item.data }}</td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="4" class="empty">Nenhuma verificação realizada ainda.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
             </table>
         </section>
 

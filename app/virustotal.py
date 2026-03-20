@@ -21,7 +21,7 @@ class VirusTotalService:
         return self.get_report(analysis_id)
 
     def get_report(self, analysis_id):
-        for _ in range(6):  # numero de tentativas
+        for _ in range(10):  # numero de tentativas
             response = requests.get(
                 f"{self.base_url}/analyses/{analysis_id}",
                 headers=self.headers
@@ -33,6 +33,6 @@ class VirusTotalService:
             if status == "completed":
                 return result
             
-            time.sleep(2)
+            time.sleep(5)
 
         return result 
