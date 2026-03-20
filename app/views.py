@@ -1,16 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .virustotal import VirusTotalService
 from .models import Historico
-
-def home(request):
-    if request.method == 'POST':
-        url = request.POST.get('url')
-        try:
-            result = VirusTotalService().scan_url(url)
-        except Exception as e:
-            return render(request, 'base.html', {'erro': str(e), 'link': url})
-        return render(request, 'base.html', {'result': result, 'link': url})
-    return render(request, 'base.html')
 
 def home(request):
     if request.method == 'POST':
@@ -31,3 +21,8 @@ def home(request):
 
     historico = Historico.objects.all().order_by('-data')
     return render(request, 'base.html', {'historico': historico})
+
+def deletar_historico(request, id):
+    historico = Historico.objects.get(id=id)
+    historico.delete()
+    return redirect('home')
