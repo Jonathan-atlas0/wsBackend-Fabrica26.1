@@ -1,11 +1,14 @@
 import requests
 import time
-from django.conf import settings
+
+
+VIRUSTOTAL_API_KEY = '85503b685f9e123177c6a0f335bf3b4999a9230a29e36ad7c01ee1827d25bb59' 
+VIRUSTOTAL_BASE_URL = 'https://www.virustotal.com/api/v3'
 
 class VirusTotalService:
     def __init__(self):
-        self.headers = {"x-apikey": settings.VIRUSTOTAL_API_KEY}
-        self.base_url = settings.VIRUSTOTAL_BASE_URL
+        self.headers = {"x-apikey":VIRUSTOTAL_API_KEY}
+        self.base_url = VIRUSTOTAL_BASE_URL
 
     def scan_url(self, url):
         response = requests.post(
