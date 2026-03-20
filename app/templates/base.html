@@ -1,11 +1,75 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Projeto Fabrica 2026.1</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    
+
+    <aside class="sidebar">
+        <div class="logo">
+            <span>🔐</span>
+            <h1>SecureDash</h1>
+        </div>
+    </aside>
+
+    <main class="main">
+
+
+        <section class="panels">
+
+            <div class="panel">
+                <h3>🌍 IP Lookup</h3>
+                <p class="panel-desc">Identifique a localização de um endereço IP</p>
+                <div class="input-group">
+                    <input type="text" placeholder="Ex: 177.0.0.1" />
+                    <button>Verificar</button>
+                </div>
+                <div class="result" id="ip-result">
+                    <span class="empty">Nenhuma consulta realizada ainda.</span>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h3>🎣 Link Checker</h3>
+                <p class="panel-desc">Verifique se um link é uma tentativa de phishing</p>
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input type="text" name="link" placeholder="Ex: https://site-suspeito.com" value="{{ link }}" />
+                        <button type="submit">Verificar</button>
+                    </div>
+                    <div class="result" id="link-result">
+                        <span class="empty">Nenhuma consulta realizada ainda.</span>
+                    </div>
+            </div>
+
+        </section>
+        
+
+        <section class="panel log-panel">
+            <h3>📋 Histórico de Verificações</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        
+                        <th>Consulta</th>
+                        <th>Resultado</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody id="log-body">
+                    <tr>
+                        <td colspan="4" class="empty">Nenhuma verificação realizada ainda.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
 </body>
 </html>
