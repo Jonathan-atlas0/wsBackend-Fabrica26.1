@@ -45,14 +45,15 @@
     </form>
     <div class="result" id="link-result">
         {% if erro %}
-        <span class="empty">Erro{{ erro }}</span>
+        <span class="empty">Nenhuma consulta realizada ainda.</span>
         {% elif result %}
-            <p>Status: {{ result.data.attributes.status }}</p>
-            <p>Malicioso: {{ result.data.attributes.stats.malicious }}</p>
-            <p>Inofensivo: {{ result.data.attributes.stats.harmless }}</p>
-            <p>Suspeito: {{ result.data.attributes.stats.suspicious }}</p>
+            Status: {{ result.data.attributes.status }}
+            Malicioso: {{ result.data.attributes.stats.malicious }}
+            Inofensivo: {{ result.data.attributes.stats.harmless }}
+            Suspeito: {{ result.data.attributes.stats.suspicious }}
+            
         {% else %}
-            <span class="empty">Nenhuma consulta realizada ainda.</span>
+            <span class="empty">Erro{{ erro }}</span>
         {% endif %}
     </div>
 </div>

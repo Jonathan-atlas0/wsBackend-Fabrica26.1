@@ -18,7 +18,7 @@ class VirusTotalService:
         return self.get_report(analysis_id)
 
     def get_report(self, analysis_id):
-        for _ in range(10):  # tenta até 10 vezes
+        for _ in range(10):  # numero de tentativas
             response = requests.get(
                 f"{self.base_url}/analyses/{analysis_id}",
                 headers=self.headers
