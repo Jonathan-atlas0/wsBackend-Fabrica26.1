@@ -116,3 +116,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+#CHAVE API DO VIRUS TOTAL
+VIRUSTOTAL_API_KEY = '85503b685f9e123177c6a0f335bf3b4999a9230a29e36ad7c01ee1827d25bb59'
+VIRUSTOTAL_BASE_URL = 'https://www.virustotal.com/api/v3'

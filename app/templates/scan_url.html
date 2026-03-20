@@ -1,0 +1,21 @@
+<div class="panel">
+    <h3>🎣 Link Checker</h3>
+    <p class="panel-desc">Verifique se um link é uma tentativa de phishing</p>
+    <form method="POST" action="{% url 'scan_url' %}">
+        {% csrf_token %}
+        <div class="input-group">
+            <input type="text" name="url" placeholder="Ex: https://site-suspeito.com" value="{{ link }}" />
+            <button type="submit">Verificar</button>
+        </div>
+    </form>
+    <div class="result" id="link-result">
+        {% if result %}
+            <p>Status: {{ result.data.attributes.status }}</p>
+            <p>Malicioso: {{ result.data.attributes.stats.malicious }}</p>
+            <p>Inofensivo: {{ result.data.attributes.stats.harmless }}</p>
+            <p>Suspeito: {{ result.data.attributes.stats.suspicious }}</p>
+        {% else %}
+            <span class="empty">Nenhuma consulta realizada ainda.</span>
+        {% endif %}
+    </div>
+</div>
