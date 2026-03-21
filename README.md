@@ -89,12 +89,6 @@ python manage.py migrate
 **7. Inicie o servidor**
 ```bash
 python manage.py runserver
-```
-
-Ou com Docker Compose:
-```bash
-docker-compose up
-```
 
 Acesse em: http://127.0.0.1:8000
 
@@ -116,7 +110,7 @@ docker run -p 8000:8000 securedash
 
 | Tipo | Valor | Descrição |
 |------|-------|-----------|
-| IP | `177.51.3.137` | Mexico |
+| IP | `1.178.29.0` | Mexico |
 | IP | `1.1.1.1` | Cloudflare |
 | IP | `177.66.0.1` | Claro Nordeste |
 | URL | `https://www.google.com` | URL limpa |
