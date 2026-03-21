@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'Projeto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', 'postgres'),
-        'USER': os.environ.get('DB_USER', 'postgres'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', '2718'),
-        'HOST': os.environ.get('DB_HOST', 'db.saxxgvfnepdpvubrvlpm.supabase.co'),
+        'NAME': 'securedash',
+        'USER': 'postgres',
+        'PASSWORD': '2718',
+        'HOST': 'db',      
         'PORT': '5432',
     }
 }

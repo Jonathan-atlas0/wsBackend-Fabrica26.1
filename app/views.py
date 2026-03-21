@@ -41,11 +41,11 @@ def limpar_historico(request):
 def editar_historico(request, id):
     item = ConsultaVirusTotal.objects.get(id=id)
     if request.method == 'POST':
-        item.url = request.POST.get('url')
-        item.status = request.POST.get('status')
-        item.malicioso = request.POST.get('malicioso')
-        item.inofensivo = request.POST.get('inofensivo')
-        item.suspeito = request.POST.get('suspeito')
+        item.url        = request.POST.get('url', item.url)
+        item.status     = request.POST.get('status', item.status)
+        item.malicioso  = request.POST.get('malicioso', item.malicioso)
+        item.inofensivo = request.POST.get('inofensivo', item.inofensivo)
+        item.suspeito   = request.POST.get('suspeito', item.suspeito)
         item.save()
         return redirect('app:home')
     return render(request, 'editar.html', {'item': item})
