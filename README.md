@@ -52,6 +52,7 @@ pip install -r requirements.txt
 ```
 
 **4. Configure as chaves de API**
+ ⚠️Não precisa, a chave já está no codigo, Se quiser usar sua propia chave:
 
 No arquivo `virustotal.py` substitua pela sua chave do VirusTotal:
 ```python
