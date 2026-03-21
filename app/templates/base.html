@@ -71,40 +71,82 @@
             </div>
 
         </section>
-            
+
         <section class="panel log-panel">
             <h3>📋 Histórico de Verificações</h3>
             <form method="POST" action="{% url 'app:limpar_historico' %}">
                 {% csrf_token %}
                 <button type="submit">Limpar Histórico</button>
             </form>
-            
+
+            <h4>🎣 URLs Verificadas</h4>
             <table>
                 <thead>
                     <tr>
                         <th>Tipo</th>
-                        <th>Consulta</th>
-                        <th>Resultado</th>
+                        <th>URL</th>
+                        <th>Status</th>
+                        <th>Malicioso</th>
+                        <th>Inofensivo</th>
+                        <th>Suspeito</th>
                         <th>Data</th>
+                        <th>Ação</th>
                     </tr>
                 </thead>
-                <tbody id="log-body">
-                    {% for item in historico %}
+                <tbody>
+                    {% for item in historico_url %}
                     <tr>
-                        <td>{{ item.tipo }}</td>
+                        <td>{{ item.tipo.nome }}</td>
                         <td>{{ item.url }}</td>
-                        <td>{{ item.resultado }}</td>
+                        <td>{{ item.status }}</td>
+                        <td>{{ item.malicioso }}</td>
+                        <td>{{ item.inofensivo }}</td>
+                        <td>{{ item.suspeito }}</td>
                         <td>{{ item.data }}</td>
-
                         <td><a href="{% url 'app:editar_historico' item.id %}">✏️ Editar</a></td>
                     </tr>
                     {% empty %}
                     <tr>
-                        <td colspan="4" class="empty">Nenhuma verificação realizada ainda.</td>
+                        <td colspan="8" class="empty">Nenhuma URL verificada ainda.</td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
+
+            <h4>🕵️‍♀️ IPs Verificados</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>IP</th>
+                        <th>Cidade</th>
+                        <th>Região</th>
+                        <th>País</th>
+                        <th>Organização</th>
+                        <th>Timezone</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in historico_ip %}
+                    <tr>
+                        <td>{{ item.tipo.nome }}</td>
+                        <td>{{ item.ip }}</td>
+                        <td>{{ item.cidade }}</td>
+                        <td>{{ item.regiao }}</td>
+                        <td>{{ item.pais }}</td>
+                        <td>{{ item.organizacao }}</td>
+                        <td>{{ item.timezone }}</td>
+                        <td>{{ item.data }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="8" class="empty">Nenhum IP verificado ainda.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
         </section>
 
     </main>
