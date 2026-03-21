@@ -1,5 +1,4 @@
-# wsBackend-Fabrica26.1
-# 🔐 Secure
+# 🔐 Secure — SecureDash
 
 Sistema de segurança web desenvolvido como projeto acadêmico para a Fábrica de Software 2026.1.
 
@@ -7,14 +6,16 @@ Sistema de segurança web desenvolvido como projeto acadêmico para a Fábrica d
 
 - 🕵️ **IP Finder** — Identifica a localização e informações de um endereço IPv4 usando a API IPInfo
 - 🎣 **Link Checker** — Verifica se uma URL é maliciosa ou phishing usando a API VirusTotal
-- 📋 **Histórico de Verificações** — Armazena e exibe todas as consultas realizadas com opção de editar e limpar
+- 📋 **Histórico de Verificações** — Armazena todas as consultas realizadas com opção de editar e limpar
+- 🗄️ **Banco de dados relacional** — Duas entidades relacionadas separando consultas de URL e IP
 
 ## 🛠️ Tecnologias
 
 - Python 3.11
-- Django
+- Django 6.0.3
 - HTML e CSS
-- SQLite
+- PostgreSQL
+- Docker
 - API VirusTotal v3
 - API IPInfo
 
@@ -37,8 +38,17 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-**4. As chaves de API nos  arquivos `virustotal.py e ipinfo.py`**
+**4. Configure as chaves de API**
 
+No arquivo `virustotal.py` substitua pela sua chave do VirusTotal:
+```python
+VIRUSTOTAL_API_KEY = 'sua_chave_aqui'
+```
+
+No arquivo `ipinfo.py` substitua pelo seu token do IPInfo:
+```python
+IPINFOCHAVE = 'seu_token_aqui'
+```
 
 **5. Rode as migrations**
 ```bash
@@ -50,7 +60,24 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Botão direto no link do terminal
+Acesse em: http://127.0.0.1:8000
+
+## 🐳 Rodando com Docker
+```bash
+docker build -t securedash .
+docker run -p 8000:8000 securedash
+```
+
+## 🧪 IPs e URLs para teste
+
+| Tipo | Valor | Descrição |
+|------|-------|-----------|
+| IP | `8.8.8.8` | Google DNS |
+| IP | `1.1.1.1` | Cloudflare |
+| IP | `177.66.0.1` | Claro Nordeste |
+| URL | `https://www.google.com` | URL limpa |
+| URL | `http://testsafebrowsing.appspot.com/s/phishing.html` | URL de phishing (teste) |
+| URL | `http://testsafebrowsing.appspot.com/s/malware.html` | URL de malware (teste) |
 
 ## 🔑 APIs utilizadas
 
@@ -61,4 +88,4 @@ Botão direto no link do terminal
 
 ## 👨‍💻 Autor
 
-Desenvolvido por *Jonathan* — Fábrica de Software 2026.1
+Desenvolvido por **Jonathan** — Fábrica de Software 2026.1
