@@ -1,4 +1,4 @@
-# 🔐 Secure — SecureDash
+# 🔐 - SecureDash
 
 Sistema de segurança web desenvolvido como projeto acadêmico para a Fábrica de Software 2026.1.
 
@@ -68,7 +68,7 @@ docker build -t securedash .
 docker run -p 8000:8000 securedash
 ```
 
-**8 🧪 IPs e URLs para teste**
+## 🧪 IPs e URLs para teste
 
 | Tipo | Valor | Descrição |
 |------|-------|-----------|
@@ -79,7 +79,7 @@ docker run -p 8000:8000 securedash
 | URL | `http://testsafebrowsing.appspot.com/s/phishing.html` | URL de phishing (teste) |
 | URL | `http://testsafebrowsing.appspot.com/s/malware.html` | URL de malware (teste) |
 
-**9 🔑 APIs utilizadas**
+## 🔑 APIs utilizadas
 
 | API | Uso | Link |
 |-----|-----|------|
