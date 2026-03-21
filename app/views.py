@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect
 from .virustotal import VirusTotalService
 from .models import Historico
 
+
+
+
+##funções banco com virustotal
 def home(request):
     if request.method == 'POST':
         url = request.POST.get('url')
@@ -25,3 +29,22 @@ def home(request):
 def limpar_historico(request):
     Historico.objects.all().delete()
     return redirect('app:home')
+
+
+##funçao do ipinfo
+
+def buscar_ip(request):
+    if request.method == 'POST':
+        ip = request.POST.get('ip')
+        try:
+            from .ipinfo import buscar_ip as consultar_ip
+            resultado_ip = consultar_ip(ip)
+        except Exception as e:
+            return render(request, 'base.html', {'erro_ip': str(e), 'ip': ip})
+        
+        historico = Historico.objects.all().order_by('-data')
+        return render(request, 'base.html', {'resultado_ip': resultado_ip, 'ip': ip, 'historico': historico})
+    
+    return redirect('app:home')
+
+
