@@ -26,7 +26,7 @@
                 <form method="POST" action="{% url 'app:buscar_ip' %}">
                     {% csrf_token %}
                     <div class="input-group">
-                        <input type="text" name="ip" placeholder="Ex: 177.0.0.1" value="{{ ip }}" />
+                        <input type="text" name="ip" placeholder="Ex: 177.0.0.1" value="{{ ip }}" required />
                         <button type="submit">Verificar</button>
                     </div>
                 </form>
@@ -52,7 +52,7 @@
                 <form method="POST" action="{% url 'app:home' %}">
                     {% csrf_token %}
                     <div class="input-group">
-                        <input type="text" name="url" placeholder="Ex: https://site-suspeito.com" value="{{ link }}" />
+                        <input type="text" name="url" placeholder="Ex: https://site-suspeito.com" value="{{ link }}" required/>
                         <button type="submit">Verificar</button>
                     </div>
                 </form>
