@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_NAME=securedash
+      - DB_USER=postgres
+      - DB_PASSWORD=2718
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: securedash
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 2718
+    ports:
+      - "5432:5432"
