@@ -95,6 +95,16 @@ docker run -p 8000:8000 securedash
 | POST | `/limpar/` | Limpa todo o histórico de verificações |
 | GET/POST | `/editar/<id>/` | Edita um registro do histórico |
 
+## 🤖 Uso de Inteligência Artificial
+
+A IA foi utilizada para:
+
+- Sugerir boas práticas de organização de código Django
+- Ajudar na configuração do Docker e Docker Compose
+- Revisar e melhorar o CSS e o HTML
+- Escrever e melhorar a documentação do projeto
+
+
 ## 👨‍💻 Autor
 
 Desenvolvido por **Jonathan Santos** — Fábrica de Software 2026.1
