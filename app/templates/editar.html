@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Registro</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <main class="main">
+        <section class="panel">
+            <h3>✏️ Editar Registro</h3>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="text" name="tipo" value="{{ item.tipo }}" placeholder="Tipo" />
+                </div>
+                <div class="input-group">
+                    <input type="text" name="url" value="{{ item.url }}" placeholder="URL" />
+                </div>
+                <div class="input-group">
+                    <input type="text" name="resultado" value="{{ item.resultado }}" placeholder="Resultado" />
+                </div>
+                <button type="submit">Salvar</button>
+                <a href="{% url 'app:home' %}">Cancelar</a>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>

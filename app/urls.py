@@ -7,4 +7,5 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('limpar/', views.limpar_historico, name='limpar_historico'),
     path('ip/', views.buscar_ip, name='buscar_ip'),
+    path('editar/<int:id>/', views.editar_historico, name='editar_historico'),
 ]

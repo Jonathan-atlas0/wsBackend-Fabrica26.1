@@ -30,7 +30,15 @@ def limpar_historico(request):
     Historico.objects.all().delete()
     return redirect('app:home')
 
-
+def editar_historico(request, id):
+    item = Historico.objects.get(id=id)
+    if request.method == 'POST':
+        item.tipo = request.POST.get('tipo')
+        item.url = request.POST.get('url')
+        item.resultado = request.POST.get('resultado')
+        item.save()
+        return redirect('app:home')
+    return render(request, 'editar.html', {'item': item})
 ##funçao do ipinfo
 
 def buscar_ip(request):
