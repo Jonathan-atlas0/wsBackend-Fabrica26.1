@@ -63,14 +63,37 @@ No arquivo `ipinfo.py` substitua pelo seu token do IPInfo:
 IPINFOCHAVE = 'seu_token_aqui'
 ```
 
-**5. Rode as migrations**
+**5. Configure o banco de dados**
+
+No arquivo `settings.py` configure o banco de dados:
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'securedash',
+        'USER': 'postgres',
+        'PASSWORD': 'sua_senha',
+        'HOST': 'localhost',  # ou 'db' se rodar com Docker Compose
+        'PORT': '5432',
+    }
+}
+```
+
+> ⚠️ Crie o banco `securedash` no PostgreSQL antes de rodar as migrations!
+
+**6. Rode as migrations**
 ```bash
 python manage.py migrate
 ```
 
-**6. Inicie o servidor**
+**7. Inicie o servidor**
 ```bash
 python manage.py runserver
+```
+
+Ou com Docker Compose:
+```bash
+docker-compose up
 ```
 
 Acesse em: http://127.0.0.1:8000
