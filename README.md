@@ -72,7 +72,7 @@ docker run -p 8000:8000 securedash
 
 | Tipo | Valor | Descrição |
 |------|-------|-----------|
-| IP | `8.8.8.8` | Google DNS |
+| IP | `177.51.3.137` | Mexico |
 | IP | `1.1.1.1` | Cloudflare |
 | IP | `177.66.0.1` | Claro Nordeste |
 | URL | `https://www.google.com` | URL limpa |
@@ -88,4 +88,4 @@ docker run -p 8000:8000 securedash
 
 ## 👨‍💻 Autor
 
-Desenvolvido por **Jonathan** — Fábrica de Software 2026.1
+Desenvolvido por **Jonathan Santos** — Fábrica de Software 2026.1
