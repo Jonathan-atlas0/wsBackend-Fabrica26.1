@@ -28,7 +28,7 @@ Sistema de segurança web desenvolvido como projeto acadêmico para a Fábrica d
 ![Link Checker](docs/Historico.png)
 
 ### IP Finder
-![IP Finder](docs/screenip.png)
+![IP Finder](docs/Screenip.png)
 
 
 
