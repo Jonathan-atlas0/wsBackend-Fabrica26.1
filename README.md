@@ -62,13 +62,13 @@ python manage.py runserver
 
 Acesse em: http://127.0.0.1:8000
 
-## 🐳 Rodando com Docker
+**7. 🐳 Rodando com Docker**
 ```bash
 docker build -t securedash .
 docker run -p 8000:8000 securedash
 ```
 
-## 🧪 IPs e URLs para teste
+**8 🧪 IPs e URLs para teste**
 
 | Tipo | Valor | Descrição |
 |------|-------|-----------|
@@ -79,12 +79,21 @@ docker run -p 8000:8000 securedash
 | URL | `http://testsafebrowsing.appspot.com/s/phishing.html` | URL de phishing (teste) |
 | URL | `http://testsafebrowsing.appspot.com/s/malware.html` | URL de malware (teste) |
 
-## 🔑 APIs utilizadas
+**9 🔑 APIs utilizadas**
 
 | API | Uso | Link |
 |-----|-----|------|
 | VirusTotal | Verificação de URLs maliciosas | [virustotal.com](https://www.virustotal.com) |
 | IPInfo | Localização de endereços IP | [ipinfo.io](https://ipinfo.io) |
+
+## 🔗 Endpoints
+
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| GET/POST | `/` | Página principal e verificação de URL via VirusTotal |
+| POST | `/ip/` | Consulta de localização de IP via IPInfo |
+| POST | `/limpar/` | Limpa todo o histórico de verificações |
+| GET/POST | `/editar/<id>/` | Edita um registro do histórico |
 
 ## 👨‍💻 Autor
 
