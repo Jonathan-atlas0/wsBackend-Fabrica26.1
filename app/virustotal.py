@@ -33,6 +33,6 @@ class VirusTotalService:
             if status == "completed":
                 return result
             
-            time.sleep(3)
+            time.sleep(2)
 
         return result 

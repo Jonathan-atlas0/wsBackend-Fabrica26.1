@@ -19,6 +19,19 @@ Sistema de segurança web desenvolvido como projeto acadêmico para a Fábrica d
 - API VirusTotal v3
 - API IPInfo
 
+## 📸 Screenshots
+
+### Página Principal
+![Página Principal](docs/home.png)
+
+### Link Checker
+![Link Checker](docs/Historico.png)
+
+### IP Finder
+![IP Finder](docs/screenip.png)
+
+
+
 ## ⚙️ Como instalar e rodar
 
 **1. Clone o repositório**
@@ -63,6 +76,14 @@ python manage.py runserver
 Acesse em: http://127.0.0.1:8000
 
 **7. 🐳 Rodando com Docker**
+
+**Opção 1 — Docker Compose (recomendado)**
+```bash
+docker-compose up
+```
+Acesse em: http://localhost:8000
+
+**Opção 2 — Docker simples**
 ```bash
 docker build -t securedash .
 docker run -p 8000:8000 securedash
@@ -103,7 +124,6 @@ A IA foi utilizada para:
 - Ajudar na configuração do Docker e Docker Compose
 - Revisar e melhorar o CSS e o HTML
 - Escrever e melhorar a documentação do projeto
-
 
 ## 👨‍💻 Autor
 
