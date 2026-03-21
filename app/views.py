@@ -22,7 +22,6 @@ def home(request):
     historico = Historico.objects.all().order_by('-data')
     return render(request, 'base.html', {'historico': historico})
 
-def deletar_historico(request, id):
-    historico = Historico.objects.get(id=id)
-    historico.delete()
-    return redirect('home')
+def limpar_historico(request):
+    Historico.objects.all().delete()
+    return redirect('app:home')
