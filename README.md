@@ -52,6 +52,7 @@ pip install -r requirements.txt
 ```
 
 **4. Configure as chaves de API**
+ ⚠️Não precisa, a chave já está no codigo, Se quiser usar sua propia chave:
 
 No arquivo `virustotal.py` substitua pela sua chave do VirusTotal:
 ```python
@@ -91,8 +92,9 @@ python manage.py migrate
 python manage.py runserver
 
 Acesse em: http://127.0.0.1:8000
+```
 
-**7. 🐳 Rodando com Docker**
+## 🐳 Rodando com Docker**
 
 **Opção 1 — Docker Compose (recomendado)**
 ```bash
@@ -112,7 +114,7 @@ docker run -p 8000:8000 securedash
 |------|-------|-----------|
 | IP | `1.178.29.0` | Mexico |
 | IP | `1.1.1.1` | Cloudflare |
-| IP | `177.66.0.1` | Claro Nordeste |
+| IP | `177.66.0.1` | TIM Nordeste |
 | URL | `https://www.google.com` | URL limpa |
 | URL | `http://testsafebrowsing.appspot.com/s/phishing.html` | URL de phishing (teste) |
 | URL | `http://testsafebrowsing.appspot.com/s/malware.html` | URL de malware (teste) |
