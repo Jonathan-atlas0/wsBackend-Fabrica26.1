@@ -2,7 +2,7 @@ import requests
 import time
 
 
-VIRUSTOTAL_API_KEY = '85503b685f9e123177c6a0f335bf3b4999a9230a29e36ad7c01ee1827d25bb59' 
+VIRUSTOTAL_API_KEY = 'XXXXXXXXXXXXXXXXXXXXX' 
 VIRUSTOTAL_BASE_URL = 'https://www.virustotal.com/api/v3'
 
 class VirusTotalService:

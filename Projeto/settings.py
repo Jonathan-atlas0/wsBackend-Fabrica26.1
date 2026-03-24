@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-v2(47)+v4b0w5x$_7i_$_c8$af^n97)exyk18fqp0+h%7)0-6i'
+SECRET_KEY = 'oiiiiii'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'securedash',
         'USER': 'postgres',
         'PASSWORD': '2718',
-        'HOST': 'db',      
+        'HOST': 'host',      
         'PORT': '5432',
     }
 }
